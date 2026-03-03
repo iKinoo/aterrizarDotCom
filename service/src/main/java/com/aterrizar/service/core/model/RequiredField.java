@@ -9,7 +9,9 @@ public enum RequiredField {
     EMAIL("EMAIL", "Email", FieldType.EMAIL),
     AGREEMENT_SIGNED("AGREEMENT_SIGNED", "Agreement Signed", FieldType.BOOLEAN),
     FUNDS_AMOUNT_US("FUNDS_AMOUNT_US", "US Funds", FieldType.NUMBER),
-    VISA_NUMBER("VISA_NUMBER", "Digital Visa Number", FieldType.TEXT);
+    VISA_NUMBER("VISA_NUMBER", "Digital Visa Number", FieldType.TEXT),
+    RFC("RFC", "RFC", FieldType.TEXT),
+    DIGITAL_SIGN("DIGITAL_SIGN", "Digital Sign", FieldType.BOOLEAN);
 
     private final String value;
     private final String id;
