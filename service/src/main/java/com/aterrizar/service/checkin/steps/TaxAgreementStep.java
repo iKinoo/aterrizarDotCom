@@ -25,7 +25,8 @@ public class TaxAgreementStep implements Step {
         if (taxAmount != null) {
             updatedContext =
                     updatedContext.withCheckinResponse(
-                            builder -> builder.errorMessage("Tax amount to be signed: " + taxAmount));
+                            builder ->
+                                    builder.errorMessage("Tax amount to be signed: " + taxAmount));
         }
         return StepResult.terminal(updatedContext);
     }
@@ -59,8 +60,6 @@ public class TaxAgreementStep implements Step {
                                                 builder.digitalSign(
                                                         value.equalsIgnoreCase("true"))))
                 .orElseThrow(
-                        () ->
-                                new IllegalStateException(
-                                        "Digital Sign is missing in the request."));
+                        () -> new IllegalStateException("Digital Sign is missing in the request."));
     }
 }

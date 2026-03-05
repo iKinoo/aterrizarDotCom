@@ -54,8 +54,7 @@ class RfcInputStepTest {
 
         assertTrue(stepResult.isTerminal());
         assertTrue(stepResult.isSuccess());
-        assertTrue(
-                updatedContext.checkinResponse().providedFields().contains(RequiredField.RFC));
+        assertTrue(updatedContext.checkinResponse().providedFields().contains(RequiredField.RFC));
     }
 
     @Test

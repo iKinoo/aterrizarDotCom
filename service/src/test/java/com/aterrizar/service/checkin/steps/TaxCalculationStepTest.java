@@ -30,7 +30,8 @@ class TaxCalculationStepTest {
     void shouldExecuteWhenRfcIsPresentAndTaxAmountIsNull() {
         var context =
                 MockContext.initializedMock(CountryCode.MX)
-                        .withUserInformation(builder -> builder.rfc("ABCD840101XYZ").taxAmount(null));
+                        .withUserInformation(
+                                builder -> builder.rfc("ABCD840101XYZ").taxAmount(null));
 
         var result = taxCalculationStep.when(context);
         assertTrue(result);
@@ -40,7 +41,8 @@ class TaxCalculationStepTest {
     void shouldNotExecuteWhenTaxAmountIsAlreadyPresent() {
         var context =
                 MockContext.initializedMock(CountryCode.MX)
-                        .withUserInformation(builder -> builder.rfc("ABCD840101XYZ").taxAmount(45.0));
+                        .withUserInformation(
+                                builder -> builder.rfc("ABCD840101XYZ").taxAmount(45.0));
 
         var result = taxCalculationStep.when(context);
         assertFalse(result);
