@@ -11,7 +11,11 @@ public enum RequiredField {
     FUNDS_AMOUNT_US("FUNDS_AMOUNT_US", "US Funds", FieldType.NUMBER),
     VISA_NUMBER("VISA_NUMBER", "Digital Visa Number", FieldType.TEXT),
     RFC("RFC", "RFC Number", FieldType.TEXT),
-    DIGITAL_SIGN("DIGITAL_SIGN", "Digital Sign", FieldType.BOOLEAN);
+    DIGITAL_SIGN("DIGITAL_SIGN", "Digital Sign", FieldType.BOOLEAN),
+    PAYMENT_METHOD("PAYMENT_METHOD", "Payment Method", FieldType.TEXT),
+    CARD_NUMBER("CARD_NUMBER", "Card Number", FieldType.TEXT),
+    LINK_IDENTIFIER("LINK_IDENTIFIER", "Link Identifier", FieldType.TEXT),
+    CURP_NUMBER("CURP_NUMBER", "CURP Number", FieldType.TEXT);
 
     private final String value;
     private final String id;
