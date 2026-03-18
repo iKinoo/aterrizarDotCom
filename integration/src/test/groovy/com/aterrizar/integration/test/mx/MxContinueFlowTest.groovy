@@ -38,8 +38,8 @@ class MxContinueFlowTest extends Specification {
         and: "fill passport"
         continueResponse = session.fillUserInput([(UserInput.PASSPORT_NUMBER): "A12345678"])
 
-        then: "be completed"
-        ContinueVerifier.completed(continueResponse)
+        then: "can continue"
+        ContinueVerifier.requiredField(continueResponse, UserInput.PAYMENT_METHOD)
     }
 
     def "should reject when RFC is invalid (ends in 1) - tax service returns 406"() {
@@ -87,7 +87,7 @@ class MxContinueFlowTest extends Specification {
         and: "fill passport"
         continueResponse = session.fillUserInput([(UserInput.PASSPORT_NUMBER): "A12345678"])
 
-        then: "be completed"
-        ContinueVerifier.completed(continueResponse)
+        then: "can continue"
+        ContinueVerifier.requiredField(continueResponse, UserInput.PAYMENT_METHOD)
     }
 }

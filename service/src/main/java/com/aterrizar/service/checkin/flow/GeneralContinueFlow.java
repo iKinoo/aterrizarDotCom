@@ -21,18 +21,16 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class GeneralContinueFlow implements FlowStrategy {
+    private final AgreementSignStep agreementSignStep;
+    private final CompleteCheckinStep completeCheckinStep;
+    private final DigitalVisaValidationStep digitalVisaValidationStep;
     private final GetSessionStep getSessionStep;
-    private final ValidateSessionStep validateSessionStep;
     private final PassportInformationStep passportInformationStep;
-
     private final PaymentMethodStep paymentMethodStep;
     private final PaymentValidationStep paymentValidationStep;
-    private final TransactionFinalizationStep transactionFinalizationStep;
-
-    private final DigitalVisaValidationStep digitalVisaValidationStep;
-    private final AgreementSignStep agreementSignStep;
     private final SaveSessionStep saveSessionStep;
-    private final CompleteCheckinStep completeCheckinStep;
+    private final TransactionFinalizationStep transactionFinalizationStep;
+    private final ValidateSessionStep validateSessionStep;
 
     @Override
     public FlowExecutor flow(FlowExecutor baseExecutor) {
